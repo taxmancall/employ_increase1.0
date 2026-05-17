@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025년 통합고용세액공제 종합 결산 - 원제우 세무사 사무소</title>
+<style>
+  :root {
+    --bg-page: #fafafa; --bg-card: #ffffff; --bg-secondary: #f5f5f5; --bg-tertiary: #ebebeb;
+    --bg-info: #E6F1FB; --bg-success: #EAF3DE; --bg-warn: #FAEEDA; --bg-danger: #FCEBEB;
+    --text-primary: #1a1a1a; --text-secondary: #666; --text-tertiary: #999;
+    --text-info: #185FA5; --text-info-dark: #042C53; --text-warn: #412402;
+    --text-danger: #791F1F; --text-success: #173404;
+    --border-tertiary: #e8e8e8; --border-secondary: #d0d0d0; --border-info: #185FA5; --border-warn: #BA7517;
+    --color-coral-dark: #A32D2D; --color-teal: #0F6E56;
+    --radius-md: 8px; --radius-lg: 12px;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: 'Malgun Gothic', '맑은 고딕', -apple-system, sans-serif; max-width: 980px; margin: 0 auto; padding: 24px 20px; color: var(--text-primary); line-height: 1.6; background: var(--bg-page); }
+  h1 { font-size: 24px; font-weight: 500; margin: 0 0 4px; }
+  h2.heading-title { font-size: 18px; font-weight: 500; margin: 20px 0 12px; display: flex; align-items: center; gap: 8px; }
+  h3 { font-size: 14px; font-weight: 500; margin: 10px 0 6px; color: #444; }
+  .app-header { border-bottom: 1px solid #ddd; padding-bottom: 16px; margin-bottom: 24px; }
+  .app-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+  .app-sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+  .quick-actions { display: flex; gap: 8px; margin-bottom: 24px; align-items: center; flex-wrap: wrap; }
+  .btn-ghost { background: transparent; border: none; cursor: pointer; font-size: 12px; color: var(--text-info); padding: 4px 8px; display: inline-flex; align-items: center; gap: 4px; }
+  .btn-ghost:hover { text-decoration: underline; }
+  .separator { color: var(--text-tertiary); font-size: 11px; }
+  .section { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 14px; }
+  .section-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
+  .client-block { background: var(--bg-card); border: 1.5px solid var(--border-info); border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 14px; }
+  .input-grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+  .input-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .input-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 700px) { .input-grid-4, .input-grid-3, .input-grid-2 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .input-grid-4, .input-grid-3, .input-grid-2 { grid-template-columns: 1fr; } }
+  .input-block { background: var(--bg-card); border-radius: var(--radius-md); padding: 10px 12px; border: 0.5px solid var(--border-tertiary); }
+  .input-block-title { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 500; }
+  .input-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 4px; }
+  .input-row { margin-bottom: 8px; }
+  .input-row:last-child { margin-bottom: 0; }
+  .year-pill { background: var(--bg-card); padding: 2px 8px; border-radius: var(--radius-md); font-size: 11px; color: var(--text-secondary); font-weight: 400; border: 0.5px solid var(--border-tertiary); }
+  input[type="text"], input[type="number"], select { width: 100%; padding: 8px 10px; font-size: 14px; border: 0.5px solid var(--border-secondary); border-radius: var(--radius-md); background: var(--bg-card); color: var(--text-primary); font-family: inherit; }
+  input[type="text"]:focus, input[type="number"]:focus, select:focus { outline: none; border-color: var(--border-info); box-shadow: 0 0 0 2px rgba(24,95,165,0.15); }
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+  .credit-label { display: inline-block; padding: 2px 8px; border-radius: var(--radius-md); font-size: 11px; margin-right: 6px; font-weight: 500; }
+  .btn-primary { background: var(--text-info); color: white; border: none; padding: 14px 24px; border-radius: var(--radius-md); font-size: 15px; font-weight: 500; cursor: pointer; width: 100%; font-family: inherit; }
+  .btn-primary:hover:not(:disabled) { background: var(--text-info-dark); }
+  .btn-export { background: var(--color-teal); color: white; border: none; padding: 12px 18px; border-radius: var(--radius-md); font-size: 14px; font-weight: 500; cursor: pointer; width: 100%; font-family: inherit; }
+  .btn-export:hover { background: #085041; }
+  .btn-export.blue { background: var(--text-info); }
+  .btn-export.blue:hover { background: var(--text-info-dark); }
+  .result-card { background: var(--bg-card); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); padding: 16px 20px; margin-bottom: 12px; }
+  .result-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .result-table th, .result-table td { padding: 8px 10px; text-align: right; }
+  .result-table th:first-child, .result-table td:first-child { text-align: left; }
+  .result-table thead tr { background: var(--bg-secondary); }
+  .result-table th { font-weight: 500; color: var(--text-secondary); font-size: 13px; }
+  .result-table tbody tr { border-top: 0.5px solid var(--border-tertiary); }
+  .error-box { background: var(--bg-danger); border-radius: var(--radius-md); padding: 12px 14px; color: var(--text-danger); font-size: 13px; margin-bottom: 1rem; }
+  .info-box { background: var(--bg-info); border-radius: var(--radius-md); padding: 12px 14px; color: var(--text-info-dark); font-size: 13px; line-height: 1.6; }
+  .warn-box { background: var(--bg-warn); border-radius: var(--radius-md); padding: 10px 14px; color: var(--text-warn); font-size: 12px; line-height: 1.6; margin-bottom: 12px; }
+  .success-box { background: var(--bg-success); border-radius: var(--radius-md); padding: 12px 14px; color: var(--text-success); font-size: 13px; line-height: 1.6; }
+  .summary-box { background: var(--bg-info); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px; }
+  .summary-box .summary-label { font-size: 13px; color: var(--text-info); font-weight: 500; margin-bottom: 8px; }
+  .summary-box .summary-text { font-size: 15px; color: var(--text-info-dark); line-height: 1.7; }
+  .summary-box strong { font-weight: 500; }
+  .export-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  @media (max-width: 500px) { .export-row { grid-template-columns: 1fr; } }
+  .app-footer { margin-top: 40px; padding-top: 20px; border-top: 0.5px solid var(--border-tertiary); font-size: 11px; color: var(--text-tertiary); line-height: 1.7; text-align: center; }
+  .case-tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; margin-right: 4px; }
+  .case-1 { background: #E6F1FB; color: #042C53; }
+  .case-2 { background: #FCEBEB; color: #791F1F; }
+  .case-3 { background: #FAEEDA; color: #412402; }
+  .case-4 { background: #EAF3DE; color: #173404; }
+  .case-5 { background: #F5F5F5; color: #444; }
+  .calc-detail { background: var(--bg-secondary); border-left: 3px solid var(--border-info); padding: 8px 12px; margin: 8px 0; font-size: 12px; line-height: 1.7; color: var(--text-secondary); }
+  .flow-arrow { text-align: center; font-size: 18px; color: var(--text-tertiary); margin: 4px 0; }
+  .big-num { font-size: 22px; font-weight: 500; }
+  .big-num.danger { color: var(--color-coral-dark); }
+  .big-num.success { color: var(--color-teal); }
+  .big-num.info { color: var(--text-info); }
+  .step-card { background: white; border: 1px solid var(--border-tertiary); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 8px; }
+  .optional-mark { display: inline-block; padding: 1px 6px; background: var(--bg-tertiary); color: var(--text-tertiary); font-size: 10px; border-radius: 4px; margin-left: 4px; }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div class="app-meta">원제우 세무사 사무소 · 사후관리 분석 도구 v3.0</div>
+  <h1>2025년 통합고용세액공제 종합 결산</h1>
+  <div class="app-sub">신규공제 + 추가공제 + 추가납부 + 이월공제 + 산출세액 한도 → 당기 공제·이월·납부 일괄 산정</div>
+</div>
+
+<div class="quick-actions">
+  <button class="btn-ghost" id="sample-btn">📋 예시 데이터 (본 사례)</button>
+  <span class="separator">|</span>
+  <button class="btn-ghost" id="clear-btn">🗑 모두 비우기</button>
+  <span class="separator">|</span>
+  <button class="btn-ghost" id="help-btn">❓ 사용법 / 처리순서</button>
+</div>
+
+<div id="help-box" style="display:none; margin-bottom: 20px;">
+  <div class="info-box">
+    <strong style="font-weight:500;">v3.0 처리 순서</strong><br>
+    ① 추가납부 산정 — 코호트별 사례 분류 (사례 1~5)<br>
+    ② 2025년 공제액 산정 — 신규공제(1차) + 추가공제(2차·3차)<br>
+    ③ 추가납부의 이월액 우선차감 — 이월공제액 → 부족분만 현금 추가납부<br>
+    ④ 산출세액 한도 적용 — 최저한세 + 산출세액 한도 내에서 공제<br>
+    ⑤ 잔여분은 2026년 이월 — 조특법 §144, 10년 이내 사용<br>
+    ⑥ 농특세 환급 — 추가납부의 20%
+  </div>
+</div>
+
+<h2 class="heading-title">🏢 클라이언트 정보</h2>
+<div class="client-block">
+  <div class="input-grid-2">
+    <div><div class="input-label">상호 / 법인명</div><input type="text" id="cli-name" placeholder="예: ○○상사"></div>
+    <div><div class="input-label">대표자명</div><input type="text" id="cli-rep" placeholder="예: 홍길동"></div>
+    <div><div class="input-label">사업자등록번호</div><input type="text" id="cli-bizno" placeholder="000-00-00000"></div>
+    <div><div class="input-label">기업유형</div><input type="text" id="cli-type" placeholder="개인사업자 / 법인" value="개인사업자"></div>
+  </div>
+  <div class="input-grid-2" style="margin-top: 10px;">
+    <select id="company-size">
+      <option value="sme">중소기업</option>
+      <option value="mid">중견기업</option>
+      <option value="large">대기업</option>
+    </select>
+    <select id="region">
+      <option value="metro">수도권 (서울·인천·경기)</option>
+      <option value="non-metro">수도권 외</option>
+    </select>
+  </div>
+</div>
+
+<h2 class="heading-title">👥 인원수 입력 (4개 연도)</h2>
+<div class="section">
+  <div class="section-desc">인원수 (소수점 2자리, 청년 = 만 34세 이하). 2022년 = 2023년 신규공제 산정의 직전연도.</div>
+  <div class="input-grid-4">
+    <div class="input-block">
+      <div class="input-block-title"><span class="year-pill">2022</span> 기준</div>
+      <div class="input-row"><div class="input-label">상시</div><input type="number" step="0.01" id="th-s22"></div>
+      <div class="input-row"><div class="input-label">청년등</div><input type="number" step="0.01" id="th-c22"></div>
+    </div>
+    <div class="input-block">
+      <div class="input-block-title"><span class="year-pill">2023</span> 1차공제</div>
+      <div class="input-row"><div class="input-label">상시</div><input type="number" step="0.01" id="th-s23"></div>
+      <div class="input-row"><div class="input-label">청년등</div><input type="number" step="0.01" id="th-c23"></div>
+    </div>
+    <div class="input-block">
+      <div class="input-block-title"><span class="year-pill">2024</span> 1차공제</div>
+      <div class="input-row"><div class="input-label">상시</div><input type="number" step="0.01" id="th-s24"></div>
+      <div class="input-row"><div class="input-label">청년등</div><input type="number" step="0.01" id="th-c24"></div>
+    </div>
+    <div class="input-block" style="border: 1.5px solid var(--border-info);">
+      <div class="input-block-title"><span class="year-pill" style="background:var(--bg-info);color:var(--text-info-dark);">2025</span> 분석 연도</div>
+      <div class="input-row"><div class="input-label">상시</div><input type="number" step="0.01" id="th-s25"></div>
+      <div class="input-row"><div class="input-label">청년등</div><input type="number" step="0.01" id="th-c25"></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="heading-title">💰 기 신청·공제·이월 내역</h2>
+<div class="section">
+  <div class="section-desc">세액공제조정명세서의 통합고용세액공제 행에서 확인. 이월액은 누적치 = 가장 최근 연도의 잔액.</div>
+  <div class="input-grid-2">
+    <div class="input-block">
+      <div class="input-block-title"><span class="year-pill">2023</span> 1차연도</div>
+      <div class="input-row"><div class="input-label">신청액 (원)</div><input type="number" id="th-sin23"></div>
+      <div class="input-row"><div class="input-label">실제 공제 (원)</div><input type="number" id="th-silje23"></div>
+      <div class="input-row"><div class="input-label">2023년말 이월 잔액 (원)</div><input type="number" id="th-iwol23"></div>
+    </div>
+    <div class="input-block">
+      <div class="input-block-title"><span class="year-pill">2024</span> 신규(1차) + 23년분 추가(2차)</div>
+      <div class="input-row"><div class="input-label">신청액 (원)</div><input type="number" id="th-sin24"></div>
+      <div class="input-row"><div class="input-label">실제 공제 (원)</div><input type="number" id="th-silje24"></div>
+      <div class="input-row"><div class="input-label">2024년말 이월 잔액 (원) = 2025년 시작시 이월잔액</div><input type="number" id="th-iwol24"></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="heading-title">📊 2025년 세액 정보 <span class="optional-mark">선택</span></h2>
+<div class="section">
+  <div class="section-desc">산출세액·최저한세를 입력하면 한도 적용 후 당기 공제액 및 2026년 이월액을 산정. 비워두면 신청액·이월액만 표시.</div>
+  <div class="input-grid-2">
+    <div class="input-block">
+      <div class="input-block-title">2025년 산출세액</div>
+      <div class="input-row"><input type="number" id="tax-sanchul" placeholder="법인세 또는 사업소득세 산출세액"></div>
+    </div>
+    <div class="input-block">
+      <div class="input-block-title">2025년 최저한세 <span style="color:var(--text-tertiary);font-size:10px;">(중소 7% / 중견 8~9% / 대기업 10~17%)</span></div>
+      <div class="input-row"><input type="number" id="tax-choejeo" placeholder="최저한세액"></div>
+    </div>
+  </div>
+  <div class="warn-box" style="margin-top:10px;">
+    💡 통합고용세액공제는 <strong>최저한세 대상</strong>. 「산출세액 − 최저한세」를 한도로 공제하며, 한도 초과액은 2026년부터 10년간 이월.
+  </div>
+</div>
+
+<button class="btn-primary" id="analyze-btn">🧮 2025년 종합 결산 시작</button>
+
+<div id="status-area" style="margin-top: 1rem;"></div>
+<div id="result-area" style="margin-top: 2rem; display: none;"></div>
+
+<div class="app-footer">
+  적용 법령: 조특법 §29의8 ①·③ / 시행령 §26의7 ⑤ / 시행령 §26의8 ④ / 기재부 조세특례제도과-214(2023.3.6) / 서면징세 2022-3543 / 조특법 §144<br>
+  작성: 원제우 세무사 사무소 · 도구 v3.0 · 본 결과는 참고용이며 실제 신고시 전문가 검토 필요
+</div>
+
+<script>
+(function() {
+  const analyzeBtn = document.getElementById('analyze-btn');
+  const statusArea = document.getElementById('status-area');
+  const resultArea = document.getElementById('result-area');
+  let lastResult = null;
+  let lastClient = null;
+
+  function getVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
+  function getText(id) { return document.getElementById(id).value || ''; }
+  function setVal(id, v) { if (v !== undefined && v !== null) document.getElementById(id).value = v; }
+  function formatNum(n) { if (n === null || n === undefined || isNaN(n)) return '0'; return Math.round(n).toLocaleString('ko-KR'); }
+  function formatDec(n, d) { d = d || 2; if (n === null || n === undefined || isNaN(n)) return '0'; return Number(n).toFixed(d); }
+  function setStatus(msg, isError) {
+    statusArea.innerHTML = isError ? '<div class="error-box">' + msg + '</div>' : '<div style="font-size: 13px; color: var(--text-secondary);">' + msg + '</div>';
+  }
+
+  document.getElementById('help-btn').addEventListener('click', function() {
+    const box = document.getElementById('help-box');
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.getElementById('sample-btn').addEventListener('click', function() {
+    setVal('cli-name', '○○상사');
+    setVal('cli-rep', '홍길동');
+    setVal('cli-bizno', '123-45-67890');
+    setVal('cli-type', '개인사업자');
+    document.getElementById('company-size').value = 'sme';
+    document.getElementById('region').value = 'metro';
+    setVal('th-s22', '0');    setVal('th-c22', '0');
+    setVal('th-s23', '1.00'); setVal('th-c23', '1.00');
+    setVal('th-s24', '1.50'); setVal('th-c24', '1.08');
+    setVal('th-s25', '1.99'); setVal('th-c25', '0.50');
+    setVal('th-sin23', '14500000'); setVal('th-silje23', '9438354'); setVal('th-iwol23', '5061646');
+    setVal('th-sin24', '19230000'); setVal('th-silje24', '4543895'); setVal('th-iwol24', '14686105');
+  });
+
+  document.getElementById('clear-btn').addEventListener('click', function() {
+    document.querySelectorAll('input[type="text"], input[type="number"]').forEach(el => el.value = '');
+    setVal('cli-type', '개인사업자');
+    resultArea.style.display = 'none';
+    statusArea.innerHTML = '';
+  });
+
+  function unitPrices(cs, rg) {
+    if (cs === 'sme') return { uc: rg === 'metro' ? 14500000 : 15500000, uo: rg === 'metro' ? 8500000 : 9500000 };
+    if (cs === 'mid') return { uc: 8000000, uo: 4500000 };
+    return { uc: 4000000, uo: 0 };
+  }
+
+  function analyzeOneCohort(baseLabel, base, cur, origInc, uc, uo, multiplier) {
+    const r = {
+      label: baseLabel, base, cur, origInc, multiplier,
+      sangsiGam: base.sangsi - cur.sangsi,
+      cheongnyeonGam: base.cheongnyeon - cur.cheongnyeon,
+      cheongoeGam: base.cheongoe - cur.cheongoe,
+      addPay: 0, addCredit: 0, caseId: '', caseName: '', calcDetail: ''
+    };
+    const sangsiDec = Math.max(0, r.sangsiGam);
+    const cyDec = Math.max(0, r.cheongnyeonGam);
+    const coDec = Math.max(0, r.cheongoeGam);
+    const origCy = origInc.cheongnyeon || 0;
+    const origCo = origInc.cheongoe || 0;
+
+    if (sangsiDec === 0 && cyDec === 0) {
+      r.caseId = '1'; r.caseName = '상시·청년 모두 유지/증가';
+      r.addCredit = origCy * uc + origCo * uo;
+      r.calcDetail = `청년등 ${formatDec(origCy)}명 × ${formatNum(uc/10000)}만원 + 청년외 ${formatDec(origCo)}명 × ${formatNum(uo/10000)}만원 = ${formatNum(r.addCredit)}원 추가공제`;
+    } else if (sangsiDec > 0 && cyDec >= sangsiDec) {
+      r.caseId = '2'; r.caseName = '상시감소, 청년감소 ≥ 상시감소';
+      const cyDecCapped = Math.min(cyDec, origCy);
+      const cyExcess = Math.max(0, cyDecCapped - sangsiDec);
+      const baseAmt = cyExcess * (uc - uo) + sangsiDec * uc;
+      r.addPay = baseAmt * multiplier;
+      r.calcDetail = `청년초과감소 ${formatDec(cyExcess)}명 × ${formatNum((uc-uo)/10000)}만원 + 상시감소 ${formatDec(sangsiDec)}명 × ${formatNum(uc/10000)}만원 = ${formatNum(baseAmt)}원` + (multiplier > 1 ? ` × ${multiplier}회 = ${formatNum(r.addPay)}원` : '') + ' 추가납부';
+    } else if (sangsiDec > 0 && cyDec < sangsiDec) {
+      r.caseId = '3'; r.caseName = '상시감소, 청년감소 < 상시감소';
+      const cyDecCapped = Math.min(cyDec, origCy, sangsiDec);
+      const coDecCapped = Math.min(coDec, origCo, sangsiDec - cyDecCapped);
+      const baseAmt = cyDecCapped * uc + coDecCapped * uo;
+      r.addPay = baseAmt * multiplier;
+      r.calcDetail = `청년감소 ${formatDec(cyDecCapped)}명 × ${formatNum(uc/10000)}만원 + 청년외 감소 ${formatDec(coDecCapped)}명 × ${formatNum(uo/10000)}만원 = ${formatNum(baseAmt)}원` + (multiplier > 1 ? ` × ${multiplier}회 = ${formatNum(r.addPay)}원` : '') + ' 추가납부';
+    } else if (sangsiDec === 0 && cyDec > 0) {
+      r.caseId = '4'; r.caseName = '상시 유지/증가, 청년만 감소 → 청년외 전환';
+      const cyDecCapped = Math.min(cyDec, origCy);
+      const baseAmt = cyDecCapped * (uc - uo);
+      r.addPay = baseAmt * multiplier;
+      r.addCredit = (origCy + origCo) * uo;
+      r.calcDetail = `[추가납부] 청년감소 ${formatDec(cyDecCapped)}명 × (${formatNum(uc/10000)}-${formatNum(uo/10000)})만원 = ${formatNum(baseAmt)}원` + (multiplier > 1 ? ` × ${multiplier}회 = ${formatNum(r.addPay)}원` : '') + `<br>[추가공제] (당초 청년 ${formatDec(origCy)} + 청년외 ${formatDec(origCo)}) × ${formatNum(uo/10000)}만원 = ${formatNum(r.addCredit)}원 (청년외 전환)`;
+    } else if (sangsiDec > 0 && cyDec === 0) {
+      r.caseId = '5'; r.caseName = '상시감소, 청년 유지/증가';
+      const coDecCapped = Math.min(coDec, origCo, sangsiDec);
+      const baseAmt = coDecCapped * uo;
+      r.addPay = baseAmt * multiplier;
+      r.calcDetail = `청년외 감소 ${formatDec(coDecCapped)}명 × ${formatNum(uo/10000)}만원 = ${formatNum(baseAmt)}원` + (multiplier > 1 ? ` × ${multiplier}회 = ${formatNum(r.addPay)}원` : '') + ' 추가납부';
+    }
+    return r;
+  }
+
+  function analyzeNewCredit(prev, cur, uc, uo) {
+    const r = {
+      prev, cur,
+      sangsiIncr: cur.sangsi - prev.sangsi,
+      cheongnyeonIncr: cur.cheongnyeon - prev.cheongnyeon,
+      cheongoeIncr: cur.cheongoe - prev.cheongoe,
+      newCredit: 0, cyIncrApplied: 0, coIncrApplied: 0, calcDetail: ''
+    };
+    if (r.sangsiIncr <= 0) {
+      r.calcDetail = `상시근로자 ${r.sangsiIncr === 0 ? '유지' : '감소'}. 신규공제 없음.`;
+      return r;
+    }
+    const cyIncr = Math.max(0, r.cheongnyeonIncr);
+    const coIncr = Math.max(0, r.cheongoeIncr);
+    r.cyIncrApplied = Math.min(cyIncr, r.sangsiIncr);
+    const remain = r.sangsiIncr - r.cyIncrApplied;
+    r.coIncrApplied = Math.min(coIncr, remain);
+    r.newCredit = r.cyIncrApplied * uc + r.coIncrApplied * uo;
+    r.calcDetail = `상시 증가 ${formatDec(r.sangsiIncr)}명 한도. 청년 증가분 ${formatDec(r.cyIncrApplied)} × ${formatNum(uc/10000)}만원 + 청년외 증가분 ${formatDec(r.coIncrApplied)} × ${formatNum(uo/10000)}만원 = ${formatNum(r.newCredit)}원`;
+    return r;
+  }
+
+  function calcTonghap(d, cs, rg, taxInfo) {
+    const { uc, uo } = unitPrices(cs, rg);
+    const y22 = { sangsi: d.s22, cheongnyeon: d.c22, cheongoe: d.s22 - d.c22 };
+    const y23 = { sangsi: d.s23, cheongnyeon: d.c23, cheongoe: d.s23 - d.c23 };
+    const y24 = { sangsi: d.s24, cheongnyeon: d.c24, cheongoe: d.s24 - d.c24 };
+    const y25 = { sangsi: d.s25, cheongnyeon: d.c25, cheongoe: d.s25 - d.c25 };
+
+    const inc23 = { sangsi: Math.max(0, y23.sangsi - y22.sangsi), cheongnyeon: Math.max(0, y23.cheongnyeon - y22.cheongnyeon) };
+    const cy23 = Math.min(inc23.cheongnyeon, inc23.sangsi);
+    const co23 = Math.max(0, inc23.sangsi - cy23);
+    const orig23 = { cheongnyeon: cy23, cheongoe: co23 };
+
+    const inc24 = { sangsi: Math.max(0, y24.sangsi - y23.sangsi), cheongnyeon: Math.max(0, y24.cheongnyeon - y23.cheongnyeon) };
+    const cy24 = Math.min(inc24.cheongnyeon, inc24.sangsi);
+    const co24 = Math.max(0, inc24.sangsi - cy24);
+    const orig24 = { cheongnyeon: cy24, cheongoe: co24 };
+
+    const cohort23 = analyzeOneCohort('2023년분 (3차연도)', y23, y25, orig23, uc, uo, 2);
+    const cohort24 = analyzeOneCohort('2024년분 (2차연도)', y24, y25, orig24, uc, uo, 1);
+    const newCredit25 = analyzeNewCredit(y24, y25, uc, uo);
+
+    // ① 추가납부 산정 (한도: 직전 2년 신청액)
+    const totalAddPay = cohort23.addPay + cohort24.addPay;
+    const cumSinchung = (d.sin23 || 0) + (d.sin24 || 0);
+    const addPayCapped = Math.min(totalAddPay, cumSinchung);
+
+    // ② 2025년 공제액 산정
+    const totalAddCredit = cohort23.addCredit + cohort24.addCredit;
+    const total2025Credit = newCredit25.newCredit + totalAddCredit;
+
+    // ③ 이월액 우선차감
+    const startIwol = d.iwol24 || 0;
+    const iwolChagam = Math.min(addPayCapped, startIwol);
+    const cashAddPay = Math.max(0, addPayCapped - iwolChagam);
+    const iwolAfterChagam = startIwol - iwolChagam;
+
+    // ④ 산출세액 한도 적용
+    const sanchul = taxInfo.sanchul || 0;
+    const choejeo = taxInfo.choejeo || 0;
+    const hasLimit = sanchul > 0;
+    const gongjeHando = hasLimit ? Math.max(0, sanchul - choejeo) : 0;
+
+    const totalPool = iwolAfterChagam + total2025Credit;
+    let dangiGongje = 0;
+    let next2026Iwol = totalPool;
+
+    if (hasLimit) {
+      dangiGongje = Math.min(totalPool, gongjeHando);
+      next2026Iwol = totalPool - dangiGongje;
+    }
+
+    // ⑤ 농특세 환급
+    const nongtukRefund = Math.round(addPayCapped * 0.20);
+
+    return {
+      uc, uo, y22, y23, y24, y25, orig23, orig24, cohort23, cohort24, newCredit25,
+      totalAddPayRaw: totalAddPay, totalAddPay: addPayCapped, cumSinchung,
+      newCredit: newCredit25.newCredit, totalAddCredit, total2025Credit,
+      startIwol, iwolChagam, iwolAfterChagam, cashAddPay,
+      hasLimit, sanchul, choejeo, gongjeHando, totalPool,
+      dangiGongje, next2026Iwol, nongtukRefund, raw: d
+    };
+  }
+
+  function readData() {
+    return {
+      s22: getVal('th-s22'), c22: getVal('th-c22'),
+      s23: getVal('th-s23'), c23: getVal('th-c23'),
+      s24: getVal('th-s24'), c24: getVal('th-c24'),
+      s25: getVal('th-s25'), c25: getVal('th-c25'),
+      sin23: getVal('th-sin23'), silje23: getVal('th-silje23'), iwol23: getVal('th-iwol23'),
+      sin24: getVal('th-sin24'), silje24: getVal('th-silje24'), iwol24: getVal('th-iwol24')
+    };
+  }
+
+  function caseTag(id) { return '<span class="case-tag case-' + id + '">사례 ' + id + '</span>'; }
+
+  function renderCohortCard(c) {
+    const arrow = v => v < 0 ? '▼' : (v > 0 ? '▲' : '–');
+    const arrColor = v => v < 0 ? '#A32D2D' : (v > 0 ? '#0F6E56' : '#999');
+    const baseYear = c.label.indexOf('2023') >= 0 ? '2023' : '2024';
+    let html = '<div class="result-card">';
+    html += '<h3>' + c.label + ' ' + caseTag(c.caseId) + ' <span style="color:#666;font-size:13px;font-weight:400;">' + c.caseName + '</span></h3>';
+    html += '<table class="result-table" style="margin-bottom:8px;">';
+    html += '<thead><tr><th>구분</th><th>최초공제(' + baseYear + ')</th><th>당해(2025)</th><th>증감</th></tr></thead><tbody>';
+    html += '<tr><td>상시</td><td>' + formatDec(c.base.sangsi) + '</td><td>' + formatDec(c.cur.sangsi) + '</td><td style="color:' + arrColor(c.cur.sangsi - c.base.sangsi) + ';">' + arrow(c.cur.sangsi - c.base.sangsi) + ' ' + formatDec(Math.abs(c.cur.sangsi - c.base.sangsi)) + '</td></tr>';
+    html += '<tr><td>└ 청년등</td><td>' + formatDec(c.base.cheongnyeon) + '</td><td>' + formatDec(c.cur.cheongnyeon) + '</td><td style="color:' + arrColor(c.cur.cheongnyeon - c.base.cheongnyeon) + ';">' + arrow(c.cur.cheongnyeon - c.base.cheongnyeon) + ' ' + formatDec(Math.abs(c.cur.cheongnyeon - c.base.cheongnyeon)) + '</td></tr>';
+    html += '<tr><td>└ 청년외</td><td>' + formatDec(c.base.cheongoe) + '</td><td>' + formatDec(c.cur.cheongoe) + '</td><td style="color:' + arrColor(c.cur.cheongoe - c.base.cheongoe) + ';">' + arrow(c.cur.cheongoe - c.base.cheongoe) + ' ' + formatDec(Math.abs(c.cur.cheongoe - c.base.cheongoe)) + '</td></tr>';
+    html += '</tbody></table>';
+    html += '<div style="font-size:12px;color:#666;margin:6px 0;">당초 공제받은 증가인원: 청년 ' + formatDec(c.origInc.cheongnyeon) + '명 / 청년외 ' + formatDec(c.origInc.cheongoe) + '명</div>';
+    html += '<div class="calc-detail">' + c.calcDetail + '</div>';
+    html += '<table class="result-table">';
+    html += '<tr><td>추가납부세액</td><td style="color:' + (c.addPay > 0 ? '#A32D2D' : '#444') + ';font-weight:500;">' + formatNum(c.addPay) + '원</td></tr>';
+    html += '<tr><td>추가공제세액</td><td style="color:' + (c.addCredit > 0 ? '#0F6E56' : '#444') + ';font-weight:500;">' + formatNum(c.addCredit) + '원</td></tr>';
+    html += '</table></div>';
+    return html;
+  }
+
+  function renderResult(r, client, cs, rg) {
+    const csLabel = cs === 'sme' ? '중소기업' : (cs === 'mid' ? '중견기업' : '대기업');
+    const rgLabel = rg === 'metro' ? '수도권' : '수도권 외';
+
+    let html = '';
+
+    // 최상단 요약
+    html += '<div class="summary-box">';
+    html += '<div class="summary-label">2025년 종합 결산 — ' + (client.name || '클라이언트') + ' (' + rgLabel + ' ' + csLabel + ')</div>';
+    html += '<div class="summary-text">';
+    html += '<div class="input-grid-' + (r.hasLimit ? '3' : '2') + '" style="gap:12px;margin-top:8px;">';
+    html += '<div class="step-card"><div style="font-size:12px;color:#666;">2025년 신청 공제세액</div><div class="big-num success">' + formatNum(r.total2025Credit) + '원</div></div>';
+    html += '<div class="step-card"><div style="font-size:12px;color:#666;">추가납부세액</div><div class="big-num ' + (r.totalAddPay > 0 ? 'danger' : '') + '">' + formatNum(r.totalAddPay) + '원</div></div>';
+    if (r.hasLimit) {
+      html += '<div class="step-card"><div style="font-size:12px;color:#666;">2026년 이월액</div><div class="big-num info">' + formatNum(r.next2026Iwol) + '원</div></div>';
+    }
+    html += '</div></div></div>';
+
+    // 1. 인원변동
+    html += '<h2 class="heading-title">① 인원 변동표</h2>';
+    html += '<div class="result-card"><table class="result-table">';
+    html += '<thead><tr><th>구분</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead><tbody>';
+    html += '<tr><td>상시</td><td>' + formatDec(r.y22.sangsi) + '</td><td>' + formatDec(r.y23.sangsi) + '</td><td>' + formatDec(r.y24.sangsi) + '</td><td>' + formatDec(r.y25.sangsi) + '</td></tr>';
+    html += '<tr><td>└ 청년등</td><td>' + formatDec(r.y22.cheongnyeon) + '</td><td>' + formatDec(r.y23.cheongnyeon) + '</td><td>' + formatDec(r.y24.cheongnyeon) + '</td><td>' + formatDec(r.y25.cheongnyeon) + '</td></tr>';
+    html += '<tr><td>└ 청년외</td><td>' + formatDec(r.y22.cheongoe) + '</td><td>' + formatDec(r.y23.cheongoe) + '</td><td>' + formatDec(r.y24.cheongoe) + '</td><td>' + formatDec(r.y25.cheongoe) + '</td></tr>';
+    html += '</tbody></table>';
+    html += '<div style="font-size:12px;color:#666;margin-top:8px;">적용 단가: 청년등 ' + formatNum(r.uc/10000) + '만원 / 청년외 ' + formatNum(r.uo/10000) + '만원 (' + rgLabel + ' ' + csLabel + ')</div>';
+    html += '</div>';
+
+    // 2. 코호트별
+    html += '<h2 class="heading-title">② 코호트별 사후관리 (추가공제 + 추가납부)</h2>';
+    html += renderCohortCard(r.cohort23);
+    html += renderCohortCard(r.cohort24);
+
+    // 3. 2025년 신규공제
+    html += '<h2 class="heading-title">③ 2025년 신규공제 (1차연도)</h2>';
+    html += '<div class="result-card">';
+    html += '<div class="calc-detail">' + r.newCredit25.calcDetail + '</div>';
+    html += '<table class="result-table">';
+    html += '<tr><td>2025년 신규 공제세액</td><td style="color:' + (r.newCredit > 0 ? '#0F6E56' : '#444') + ';font-weight:500;">' + formatNum(r.newCredit) + '원</td></tr>';
+    html += '</table></div>';
+
+    // 4. 신청액 합산
+    html += '<h2 class="heading-title">④ 2025년 신청 가능 공제세액 (합산)</h2>';
+    html += '<div class="result-card"><table class="result-table">';
+    html += '<tr><td>① 2023년분 추가공제 (3차)</td><td style="color:#0F6E56;">' + formatNum(r.cohort23.addCredit) + '원</td></tr>';
+    html += '<tr><td>② 2024년분 추가공제 (2차)</td><td style="color:#0F6E56;">' + formatNum(r.cohort24.addCredit) + '원</td></tr>';
+    html += '<tr><td>③ 2025년 신규공제 (1차)</td><td style="color:#0F6E56;">' + formatNum(r.newCredit) + '원</td></tr>';
+    html += '<tr style="background:var(--bg-success);"><td><strong>2025년 신청액 합계</strong></td><td style="color:#173404;font-weight:500;font-size:16px;">' + formatNum(r.total2025Credit) + '원</td></tr>';
+    html += '</table></div>';
+
+    // 5. 추가납부
+    html += '<h2 class="heading-title">⑤ 추가납부 처리 (이월액 우선차감)</h2>';
+    html += '<div class="result-card">';
+    if (r.totalAddPay === 0) {
+      html += '<div class="success-box">추가납부 사유 없음. 모든 코호트가 사후관리 요건을 충족했습니다.</div>';
+    } else {
+      html += '<table class="result-table">';
+      html += '<tr><td>④ 2023년분 추가납부 (3차, ×2회)</td><td style="color:#A32D2D;">△' + formatNum(r.cohort23.addPay) + '원</td></tr>';
+      html += '<tr><td>⑤ 2024년분 추가납부 (2차, ×1회)</td><td style="color:#A32D2D;">△' + formatNum(r.cohort24.addPay) + '원</td></tr>';
+      html += '<tr style="background:var(--bg-danger);"><td><strong>추가납부 합계</strong></td><td style="color:#791F1F;font-weight:500;">△' + formatNum(r.totalAddPay) + '원</td></tr>';
+      if (r.totalAddPayRaw > r.totalAddPay) {
+        html += '<tr><td style="font-size:11px;color:#999;">※ 한도 적용 전 ' + formatNum(r.totalAddPayRaw) + '원 → 직전 2년 신청액 ' + formatNum(r.cumSinchung) + '원 한도</td><td></td></tr>';
+      }
+      html += '</table>';
+      html += '<div class="flow-arrow">↓ 조특법 §29의8 ③: 이월액에서 먼저 차감 ↓</div>';
+      html += '<table class="result-table">';
+      html += '<tr><td>2025년 시작 이월액</td><td>' + formatNum(r.startIwol) + '원</td></tr>';
+      html += '<tr><td>└ 추가납부에서 차감</td><td style="color:#A32D2D;">△' + formatNum(r.iwolChagam) + '원</td></tr>';
+      html += '<tr><td><strong>이월액 잔여 (차감 후)</strong></td><td style="font-weight:500;">' + formatNum(r.iwolAfterChagam) + '원</td></tr>';
+      html += '<tr style="background:' + (r.cashAddPay > 0 ? 'var(--bg-danger)' : 'var(--bg-success)') + ';"><td><strong>현금 추가납부세액</strong></td><td style="color:' + (r.cashAddPay > 0 ? '#791F1F' : '#173404') + ';font-weight:500;font-size:15px;">' + formatNum(r.cashAddPay) + '원</td></tr>';
+      html += '</table></div>';
+
+      html += '<h3 style="margin-top:14px;">농특세 환급</h3>';
+      html += '<div class="result-card"><table class="result-table">';
+      html += '<tr><td>추가납부세액</td><td>' + formatNum(r.totalAddPay) + '원</td></tr>';
+      html += '<tr><td>당초 농특세 기납부 (20%)</td><td>' + formatNum(r.nongtukRefund) + '원</td></tr>';
+      html += '<tr style="background:var(--bg-success);"><td><strong>농특세 환급 신청액</strong></td><td style="color:#173404;font-weight:500;">' + formatNum(r.nongtukRefund) + '원</td></tr>';
+      html += '</table>';
+      html += '<div style="font-size:12px;color:#666;margin-top:8px;">※ 농특세 신고서 기납부세액으로 기재 차감, 차감할 세액 없으면 일반환급 신청 후 법인세 충당.</div>';
+    }
+    html += '</div>';
+
+    // 6. 한도 적용
+    html += '<h2 class="heading-title">⑥ 2025년 공제 적용 (산출세액 한도)</h2>';
+    html += '<div class="result-card">';
+    if (!r.hasLimit) {
+      html += '<div class="warn-box">산출세액·최저한세를 입력하지 않으면 한도 적용 후 당기공제·이월액 산정이 불가합니다. 상단 "2025년 세액 정보"란에 입력해주세요.</div>';
+      html += '<table class="result-table">';
+      html += '<tr><td>이월액 잔여 (추가납부 차감 후)</td><td>' + formatNum(r.iwolAfterChagam) + '원</td></tr>';
+      html += '<tr><td>2025년 신청액</td><td>' + formatNum(r.total2025Credit) + '원</td></tr>';
+      html += '<tr style="background:var(--bg-info);"><td><strong>공제 가능 풀 (한도 적용 전)</strong></td><td style="color:#042C53;font-weight:500;">' + formatNum(r.totalPool) + '원</td></tr>';
+      html += '</table>';
+    } else {
+      html += '<table class="result-table">';
+      html += '<tr><td>2025년 산출세액</td><td>' + formatNum(r.sanchul) + '원</td></tr>';
+      html += '<tr><td>2025년 최저한세</td><td>' + formatNum(r.choejeo) + '원</td></tr>';
+      html += '<tr style="background:var(--bg-info);"><td><strong>공제 한도 (산출세액 − 최저한세)</strong></td><td style="color:#042C53;font-weight:500;">' + formatNum(r.gongjeHando) + '원</td></tr>';
+      html += '</table>';
+      html += '<div class="flow-arrow">↓</div>';
+      html += '<table class="result-table">';
+      html += '<tr><td>이월액 잔여 (추가납부 차감 후)</td><td>' + formatNum(r.iwolAfterChagam) + '원</td></tr>';
+      html += '<tr><td>2025년 신청액</td><td>' + formatNum(r.total2025Credit) + '원</td></tr>';
+      html += '<tr><td><strong>공제 가능 풀 합계</strong></td><td style="font-weight:500;">' + formatNum(r.totalPool) + '원</td></tr>';
+      html += '</table>';
+      html += '<div class="flow-arrow">↓ 한도 적용 ↓</div>';
+      html += '<table class="result-table">';
+      html += '<tr style="background:var(--bg-success);"><td><strong>2025년 당기 공제액</strong></td><td style="color:#173404;font-weight:500;font-size:16px;">' + formatNum(r.dangiGongje) + '원</td></tr>';
+      html += '<tr style="background:var(--bg-info);"><td><strong>2026년 이월액</strong></td><td style="color:#042C53;font-weight:500;font-size:15px;">' + formatNum(r.next2026Iwol) + '원</td></tr>';
+      html += '</table>';
+      if (r.totalPool > r.gongjeHando) {
+        html += '<div style="font-size:12px;color:#666;margin-top:8px;">※ 공제 풀 ' + formatNum(r.totalPool) + '원이 한도 ' + formatNum(r.gongjeHando) + '원을 초과 → 차액 ' + formatNum(r.next2026Iwol) + '원은 2026년부터 10년간 이월 (조특법 §144)</div>';
+      } else if (r.totalPool > 0) {
+        html += '<div style="font-size:12px;color:#666;margin-top:8px;">※ 공제 풀이 한도 내. 전액 당기 공제, 다음 연도 이월 없음.</div>';
+      }
+    }
+    html += '</div>';
+
+    // 7. 최종 결산표
+    html += '<h2 class="heading-title">⑦ 2025년 최종 결산표</h2>';
+    html += '<div class="result-card" style="border: 1.5px solid var(--border-info);">';
+    html += '<table class="result-table">';
+    html += '<tr><td>📥 신청 공제세액 (1차+2차+3차)</td><td style="color:#0F6E56;font-weight:500;">+' + formatNum(r.total2025Credit) + '원</td></tr>';
+    html += '<tr><td>📤 추가납부세액</td><td style="color:#A32D2D;font-weight:500;">△' + formatNum(r.totalAddPay) + '원</td></tr>';
+    html += '<tr><td>　└ 이월액 우선차감</td><td>(' + formatNum(r.iwolChagam) + '원)</td></tr>';
+    html += '<tr><td>　└ 현금 추가납부</td><td style="color:' + (r.cashAddPay > 0 ? '#A32D2D' : '#444') + ';">(' + formatNum(r.cashAddPay) + '원)</td></tr>';
+    if (r.hasLimit) {
+      html += '<tr style="border-top:2px solid #999;"><td>💰 <strong>당기 실제 공제액</strong></td><td style="color:#173404;font-weight:500;font-size:16px;">' + formatNum(r.dangiGongje) + '원</td></tr>';
+      html += '<tr><td>📦 <strong>2026년 이월액</strong></td><td style="color:#042C53;font-weight:500;font-size:15px;">' + formatNum(r.next2026Iwol) + '원</td></tr>';
+    } else {
+      html += '<tr style="border-top:2px solid #999;"><td>💼 <strong>공제 가능 총액 (한도 적용 전)</strong></td><td style="color:#173404;font-weight:500;font-size:16px;">' + formatNum(r.totalPool) + '원</td></tr>';
+    }
+    if (r.totalAddPay > 0) {
+      html += '<tr><td>🔄 농특세 환급 신청</td><td style="color:#0F6E56;font-weight:500;">+' + formatNum(r.nongtukRefund) + '원</td></tr>';
+    }
+    html += '</table></div>';
+
+    // 8. 2026년 안내
+    html += '<h2 class="heading-title">⑧ 2026년 이후 안내</h2>';
+    html += '<div class="success-box"><strong style="font-weight:500;">2026년부터 통합고용세액공제 전면 개정</strong><br>';
+    html += '• 비교기준 변경: 1차=직전 / 2차=전전 / 3차=전전전<br>';
+    html += '• 사후관리: 감소분만 공제배제 (추가납부 폐지)<br>';
+    html += '• 청년등 단가 (수도권 중소): 1년차 700 / 2년차 1,600 / 3년차 1,700만원<br>';
+    html += '• 청년외 단가 (수도권 중소): 1년차 400 / 2년차 900 / 3년차 1,000만원<br>';
+    html += '<br>' + (client.name || '본 클라이언트') + ' 적용: 2026년 상시근로자가 2025년(' + formatDec(r.y25.sangsi) + '명)보다 증가하면 신 통합고용세액공제 1차연도 적용 가능. 이월액 ' + formatNum(r.next2026Iwol) + '원은 10년간 사용 가능 (조특법 §144).';
+    html += '</div>';
+
+    // 출력
+    html += '<h2 class="heading-title" style="margin-top:1.5rem;">📄 INDEX 보고서 출력</h2>';
+    html += '<div class="result-card">';
+    html += '<div style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">위 분석 결과를 ' + (client.name || '클라이언트') + ' INDEX 보고서로 다운로드합니다.</div>';
+    html += '<div class="export-row">';
+    html += '<button class="btn-export" onclick="window.exportHTML()">📥 HTML 다운로드</button>';
+    html += '<button class="btn-export blue" onclick="window.exportPrint()">🖨 인쇄 / PDF 저장</button>';
+    html += '</div></div>';
+
+    resultArea.innerHTML = html;
+    resultArea.style.display = 'block';
+    resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function buildIndexHTML(r, client, cs, rg) {
+    const today = new Date();
+    const dateStr = today.getFullYear() + '.' + String(today.getMonth()+1).padStart(2,'0') + '.' + String(today.getDate()).padStart(2,'0');
+    const csLabel = cs === 'sme' ? '중소기업' : (cs === 'mid' ? '중견기업' : '대기업');
+    const rgLabel = rg === 'metro' ? '수도권' : '수도권 외';
+
+    let conclusion;
+    if (r.hasLimit) {
+      conclusion = client.name + '의 2025년 통합고용세액공제 종합 결산: <strong>신청액 ' + formatNum(r.total2025Credit) + '원</strong>, <strong>추가납부 ' + formatNum(r.totalAddPay) + '원</strong> (이월액 우선차감 ' + formatNum(r.iwolChagam) + '원 / 현금 ' + formatNum(r.cashAddPay) + '원), <strong>당기 공제 ' + formatNum(r.dangiGongje) + '원</strong>, <strong>2026년 이월 ' + formatNum(r.next2026Iwol) + '원</strong>.';
+    } else {
+      conclusion = client.name + '의 2025년 통합고용세액공제: <strong>신청액 ' + formatNum(r.total2025Credit) + '원</strong>, <strong>추가납부 ' + formatNum(r.totalAddPay) + '원</strong>. 산출세액 미입력으로 한도 적용 전 공제 가능 풀 ' + formatNum(r.totalPool) + '원.';
+    }
+
+    const cohortRow = (c) => {
+      const baseYear = c.label.indexOf('2023') >= 0 ? '2023' : '2024';
+      return '<div class="r-section"><h2>' + c.label + ' — 사례 ' + c.caseId + ': ' + c.caseName + '</h2>' +
+        '<table>' +
+        '<tr><td>최초공제(' + baseYear + ') 인원</td><td>상시 ' + formatDec(c.base.sangsi) + ' / 청년 ' + formatDec(c.base.cheongnyeon) + ' / 청년외 ' + formatDec(c.base.cheongoe) + '</td></tr>' +
+        '<tr><td>당해(2025) 인원</td><td>상시 ' + formatDec(c.cur.sangsi) + ' / 청년 ' + formatDec(c.cur.cheongnyeon) + ' / 청년외 ' + formatDec(c.cur.cheongoe) + '</td></tr>' +
+        '<tr><td>당초 공제 증가인원</td><td>청년 ' + formatDec(c.origInc.cheongnyeon) + '명 / 청년외 ' + formatDec(c.origInc.cheongoe) + '명</td></tr>' +
+        '<tr><td>계산 근거</td><td style="text-align:left;">' + c.calcDetail + '</td></tr>' +
+        '<tr><td>추가공제세액</td><td style="color:' + (c.addCredit > 0 ? '#0F6E56' : '#444') + ';">' + formatNum(c.addCredit) + '원</td></tr>' +
+        '<tr><td>추가납부세액</td><td style="color:' + (c.addPay > 0 ? '#A32D2D' : '#444') + ';">' + formatNum(c.addPay) + '원</td></tr>' +
+        '</table></div>';
+    };
+
+    return '<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">' +
+      '<title>' + client.name + ' 2025년 통합고용세액공제 종합결산 INDEX</title>' +
+      '<style>' +
+      '* { box-sizing: border-box; }' +
+      'body { font-family: "Malgun Gothic", "맑은 고딕", sans-serif; max-width: 900px; margin: 0 auto; padding: 30px 24px; color: #1a1a1a; line-height: 1.6; background: #fafafa; }' +
+      'h1 { font-size: 24px; font-weight: 500; margin: 0 0 4px; }' +
+      'h2 { font-size: 17px; font-weight: 500; margin: 0 0 14px; padding-top: 8px; color: #185FA5; }' +
+      'h3 { font-size: 14px; font-weight: 500; margin: 14px 0 6px; color: #444; }' +
+      '.header { border-bottom: 1px solid #ddd; padding-bottom: 16px; margin-bottom: 24px; }' +
+      '.header-meta { font-size: 12px; color: #666; margin-bottom: 6px; }' +
+      '.header-sub { font-size: 13px; color: #666; margin-top: 6px; }' +
+      '.summary { background: #E6F1FB; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; color: #042C53; font-size: 14px; line-height: 1.7; }' +
+      '.summary strong { font-weight: 500; }' +
+      '.r-section { background: white; border: 0.5px solid #e0e0e0; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }' +
+      'table { width: 100%; border-collapse: collapse; font-size: 13px; }' +
+      'table td { padding: 8px 10px; border-top: 0.5px solid #e8e8e8; vertical-align: top; }' +
+      'table tr:first-child td { border-top: none; }' +
+      'table td:first-child { color: #666; width: 40%; }' +
+      'table td:last-child { font-weight: 500; text-align: right; }' +
+      '.law-card { background: #f5f5f5; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; font-size: 13px; line-height: 1.6; }' +
+      '.law-tag { background: white; padding: 2px 8px; border-radius: 6px; font-size: 11px; color: #666; margin-right: 6px; border: 0.5px solid #e0e0e0; }' +
+      '.footer { margin-top: 30px; padding-top: 16px; border-top: 0.5px solid #e0e0e0; font-size: 11px; color: #999; line-height: 1.7; text-align: center; }' +
+      '.note { font-size: 12px; color: #666; margin-top: 10px; line-height: 1.6; }' +
+      '.big-row { background: #E6F1FB; }' +
+      '.big-row td { color: #042C53 !important; font-weight: 500 !important; font-size: 15px; }' +
+      '@media print { body { background: white; padding: 12px; max-width: 100%; } .r-section { break-inside: avoid; } }' +
+      '</style></head><body>' +
+      '<div class="header">' +
+      '<div class="header-meta">원제우 세무사 사무소 · 2025년 통합고용세액공제 종합 결산 v3.0</div>' +
+      '<h1>' + client.name + ' 통합고용세액공제 종합 결산</h1>' +
+      '<div class="header-sub">사업자 ' + client.bizno + ' · 대표 ' + client.rep + ' · ' + client.type + ' · ' + rgLabel + ' ' + csLabel + '</div>' +
+      '<div class="header-sub">분석 연도: 2025년 귀속 · 적용 단가: 청년등 ' + formatNum(r.uc/10000) + '만원 / 청년외 ' + formatNum(r.uo/10000) + '만원</div>' +
+      '</div>' +
+      '<div class="summary"><strong>결산 결론:</strong> ' + conclusion + '</div>' +
+
+      '<div class="r-section"><h2>01 핵심 결산</h2><table>' +
+      '<tr><td>📥 2025년 신청 공제세액</td><td style="color:#0F6E56;">+' + formatNum(r.total2025Credit) + '원</td></tr>' +
+      '<tr><td>　└ 2023년분 추가공제 (3차)</td><td>' + formatNum(r.cohort23.addCredit) + '원</td></tr>' +
+      '<tr><td>　└ 2024년분 추가공제 (2차)</td><td>' + formatNum(r.cohort24.addCredit) + '원</td></tr>' +
+      '<tr><td>　└ 2025년 신규공제 (1차)</td><td>' + formatNum(r.newCredit) + '원</td></tr>' +
+      '<tr><td>📤 추가납부세액</td><td style="color:#A32D2D;">△' + formatNum(r.totalAddPay) + '원</td></tr>' +
+      '<tr><td>　└ 2023년분 (3차, ×2회)</td><td>' + formatNum(r.cohort23.addPay) + '원</td></tr>' +
+      '<tr><td>　└ 2024년분 (2차, ×1회)</td><td>' + formatNum(r.cohort24.addPay) + '원</td></tr>' +
+      '<tr><td>　└ 이월액 우선차감</td><td>' + formatNum(r.iwolChagam) + '원</td></tr>' +
+      '<tr><td>　└ 현금 추가납부</td><td style="color:' + (r.cashAddPay > 0 ? '#A32D2D' : '#444') + ';">' + formatNum(r.cashAddPay) + '원</td></tr>' +
+      (r.hasLimit
+        ? '<tr class="big-row"><td>💰 2025년 당기 실제 공제액</td><td>' + formatNum(r.dangiGongje) + '원</td></tr>' +
+          '<tr class="big-row"><td>📦 2026년 이월액</td><td>' + formatNum(r.next2026Iwol) + '원</td></tr>'
+        : '<tr class="big-row"><td>💼 공제 가능 총액 (한도적용 전)</td><td>' + formatNum(r.totalPool) + '원</td></tr>'
+      ) +
+      (r.totalAddPay > 0 ? '<tr><td>🔄 농특세 환급 신청</td><td style="color:#0F6E56;">' + formatNum(r.nongtukRefund) + '원</td></tr>' : '') +
+      '</table></div>' +
+
+      '<div class="r-section"><h2>02 인원 변동 (2022~2025)</h2><table>' +
+      '<tr><td>상시</td><td>' + formatDec(r.y22.sangsi) + ' / ' + formatDec(r.y23.sangsi) + ' / ' + formatDec(r.y24.sangsi) + ' / ' + formatDec(r.y25.sangsi) + '</td></tr>' +
+      '<tr><td>└ 청년등</td><td>' + formatDec(r.y22.cheongnyeon) + ' / ' + formatDec(r.y23.cheongnyeon) + ' / ' + formatDec(r.y24.cheongnyeon) + ' / ' + formatDec(r.y25.cheongnyeon) + '</td></tr>' +
+      '<tr><td>└ 청년외</td><td>' + formatDec(r.y22.cheongoe) + ' / ' + formatDec(r.y23.cheongoe) + ' / ' + formatDec(r.y24.cheongoe) + ' / ' + formatDec(r.y25.cheongoe) + '</td></tr>' +
+      '</table></div>' +
+
+      cohortRow(r.cohort23) + cohortRow(r.cohort24) +
+
+      '<div class="r-section"><h2>2025년 신규공제 (1차연도)</h2><table>' +
+      '<tr><td>2024 → 2025 증감</td><td>상시 ' + formatDec(r.newCredit25.sangsiIncr) + ' / 청년 ' + formatDec(r.newCredit25.cheongnyeonIncr) + ' / 청년외 ' + formatDec(r.newCredit25.cheongoeIncr) + '</td></tr>' +
+      '<tr><td>계산 근거</td><td style="text-align:left;">' + r.newCredit25.calcDetail + '</td></tr>' +
+      '<tr><td>신규 공제세액</td><td style="color:' + (r.newCredit > 0 ? '#0F6E56' : '#444') + ';">' + formatNum(r.newCredit) + '원</td></tr>' +
+      '</table></div>' +
+
+      (r.hasLimit ?
+        '<div class="r-section"><h2>03 산출세액 한도 적용 및 이월 산정</h2><table>' +
+        '<tr><td>2025년 산출세액</td><td>' + formatNum(r.sanchul) + '원</td></tr>' +
+        '<tr><td>2025년 최저한세</td><td>' + formatNum(r.choejeo) + '원</td></tr>' +
+        '<tr><td>공제 한도 (산출세액 − 최저한세)</td><td>' + formatNum(r.gongjeHando) + '원</td></tr>' +
+        '<tr><td>이월액 잔여 (추가납부 차감 후)</td><td>' + formatNum(r.iwolAfterChagam) + '원</td></tr>' +
+        '<tr><td>2025년 신청액</td><td>' + formatNum(r.total2025Credit) + '원</td></tr>' +
+        '<tr><td>공제 가능 풀 합계</td><td>' + formatNum(r.totalPool) + '원</td></tr>' +
+        '<tr class="big-row"><td>2025년 당기 실제 공제액</td><td>' + formatNum(r.dangiGongje) + '원</td></tr>' +
+        '<tr class="big-row"><td>2026년 이월액 (조특법 §144)</td><td>' + formatNum(r.next2026Iwol) + '원</td></tr>' +
+        '</table></div>' : '') +
+
+      '<div class="r-section"><h2>04 2026년 이후 안내</h2><table>' +
+      '<tr><td>시행 시기</td><td>2026.1.1 이후 개시 사업연도부터</td></tr>' +
+      '<tr><td>비교 기준 변경</td><td>1차: 직전 / 2차: 전전 / 3차: 전전전</td></tr>' +
+      '<tr><td>사후관리 방식</td><td>감소분만 공제배제 (추가납부 폐지)</td></tr>' +
+      '<tr><td>청년등 단가 (수도권 중소)</td><td>1년차 700 / 2년차 1,600 / 3년차 1,700만원</td></tr>' +
+      '<tr><td>청년외 단가 (수도권 중소)</td><td>1년차 400 / 2년차 900 / 3년차 1,000만원</td></tr>' +
+      '</table>' +
+      '<div class="note">' + client.name + ' 적용: 2026년 상시근로자가 2025년(' + formatDec(r.y25.sangsi) + '명)보다 증가하면 신 통합고용세액공제 1차연도 적용 가능. 본 결산의 이월액 ' + formatNum(r.next2026Iwol) + '원은 2026년부터 10년간 사용 가능 (조특법 §144).</div>' +
+      '</div>' +
+
+      '<div class="r-section"><h2>05 핵심 법령·예규</h2>' +
+      '<div class="law-card"><span class="law-tag">조특법 §29의8 ①</span>1차연도 신규공제 (상시근로자 증가분)</div>' +
+      '<div class="law-card"><span class="law-tag">조특법 §29의8 ③</span>추가납부세액의 이월공제액 우선차감 원칙</div>' +
+      '<div class="law-card"><span class="law-tag">시행령 §26의7 ⑤ 1호 가목</span>1년 이내 감소 추가납부 (사례 1·2·3·5)</div>' +
+      '<div class="law-card"><span class="law-tag">시행령 §26의7 ⑤ 1호 나목</span>상시 유지·증가, 청년 감소 추가납부 (사례 4)</div>' +
+      '<div class="law-card"><span class="law-tag">시행령 §26의7 ⑤ 2호 단서</span>3차연도 추가납부 ×2회 계산</div>' +
+      '<div class="law-card"><span class="law-tag">기재부 조세특례제도과-214</span>(2023.3.6) 청년 감소 시 청년외 공제로 추가공제 전환</div>' +
+      '<div class="law-card"><span class="law-tag">서면징세 2022-3543</span>(2023.6.22) 추가납부 시 농특세 환급 또는 충당</div>' +
+      '<div class="law-card"><span class="law-tag">조특법 §144</span>이월공제 10년</div>' +
+      '</div>' +
+
+      '<div class="footer">작성일: ' + dateStr + ' · 적용 법령: 조세특례제한법 (2025년 귀속 기준) · 도구 v3.0<br>원제우 세무사 사무소</div>' +
+      '</body></html>';
+  }
+
+  window.exportHTML = function() {
+    if (!lastResult || !lastClient) return;
+    const html = buildIndexHTML(lastResult, lastClient, lastResult.cs, lastResult.rg);
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (lastClient.name || 'client') + '_통합고용세액공제_2025결산.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  window.exportPrint = function() {
+    if (!lastResult || !lastClient) return;
+    const html = buildIndexHTML(lastResult, lastClient, lastResult.cs, lastResult.rg);
+    const w = window.open('', '_blank');
+    if (w) {
+      w.document.write(html);
+      w.document.close();
+      setTimeout(() => { w.print(); }, 500);
+    }
+  };
+
+  analyzeBtn.addEventListener('click', function() {
+    statusArea.innerHTML = '';
+    resultArea.style.display = 'none';
+    const cli = {
+      name: getText('cli-name') || '클라이언트',
+      rep: getText('cli-rep') || '-',
+      bizno: getText('cli-bizno') || '-',
+      type: getText('cli-type') || '-'
+    };
+    const cs = document.getElementById('company-size').value;
+    const rg = document.getElementById('region').value;
+    const d = readData();
+    const taxInfo = { sanchul: getVal('tax-sanchul'), choejeo: getVal('tax-choejeo') };
+
+    if (d.s25 === 0 && d.c25 === 0) {
+      setStatus('2025년 인원수를 입력해주세요.', true);
+      return;
+    }
+
+    const result = calcTonghap(d, cs, rg, taxInfo);
+    result.cs = cs; result.rg = rg;
+    lastResult = result;
+    lastClient = cli;
+    renderResult(result, cli, cs, rg);
+  });
+})();
+</script>
+</body>
+</html>
